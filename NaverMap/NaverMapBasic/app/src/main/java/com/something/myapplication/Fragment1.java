@@ -106,7 +106,7 @@ public class Fragment1 extends Fragment {
     TextView name;
     double a = 0, b = 0;
     private NMapContext mMapContext;
-    private static final String CLIENT_ID = "CszUaxqSM37gzrSc6sdK";// 애플리케이션 클라이언트 아이디 값
+    private static final String CLIENT_ID = "";// 애플리케이션 클라이언트 아이디 값
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         return inflater.inflate(R.layout.nmapfragment, container, false);
