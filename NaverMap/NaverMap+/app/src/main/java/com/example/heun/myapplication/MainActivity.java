@@ -63,7 +63,7 @@ public class MainActivity extends NMapActivity {
             Manifest.permission.ACCESS_FINE_LOCATION,
             Manifest.permission.READ_CONTACTS
     };
-    String APiKey = "";// 클라이언트 아이디
+    String APiKey = "kHk_0OOizoqvK0OtSRxu";
     NMapView mMapView;		//MapView 객체(지도 생성, 지도데이터)
     NMapController mMapController;	//지도 상태 컨트롤 객체
     NMapViewerResourceProvider mMapViewerResourceProvider;	//지도 뷰어 리소스 곱급자 객체 생성
