@@ -1,4 +1,4 @@
-### Beacon_Final
+#### Beacon_Final
 >@ I-Beacon 을 사용한 실내위치 데이터를 서버로 보내는 프로그램이다.<br>
 각각의 비콘의 id를 저장해 가장 가까운 비콘을 구해 가상의 맵에 드로잉 하는데 사용가능하다.
 ### NaverMAP
