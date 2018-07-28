@@ -37,10 +37,8 @@ import java.util.UUID;
 import static android.R.attr.button;
 
 public class MainActivity extends AppCompatActivity {
-    //public static final String sIP = "118.219.241.229";
     public static final String sIP = "117.16.44.95";
     //사용할 통신 포트
-    //public static final int sPORT = 4421;
     public static final int sPORT = 8888;
     //데이터 보낼 클랙스
     DatagramSocket socket;
@@ -54,8 +52,8 @@ public class MainActivity extends AppCompatActivity {
     int Best;
     String noiseB = "No Beacon";
     boolean BConnect= false;
-    public BeaconManager beaconManager;
-    double Becaons[]=new double[20];
+    public BeaconManager beaconManager; 
+    double Becaons[]=new double[20]; // 최대 비콘을 20개로 지정
 
     private Region regions= new BeaconRegion("pid",null,null,null);
     private TextView b1,textt;
@@ -97,9 +95,10 @@ public class MainActivity extends AppCompatActivity {
         Becaons[12]= 13285;
         Becaons[13]= 13294;
         //add this below:
-        numbofB = 10;
+        numbofB = 13;
         Main();
     }
+    // 쓰레드를 이용해 비콘의 세기를 측정한다.
     public void Main(){
         beaconCheck();
         final Handler handler = new Handler(){
@@ -125,6 +124,7 @@ public class MainActivity extends AppCompatActivity {
         });
         thread.start();
     }
+    //
     public int MMaxing(int numbofB){
         int a=0;
         for(int i=1;i<=numbofB;i++) {
@@ -176,12 +176,13 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    //비콘과의 연결
     public void beaconCheck() {
         beaconManager.setRangingListener(new BeaconManager.BeaconRangingListener() {
             @Override
-
             public void onBeaconsDiscovered(BeaconRegion region, List<Beacon> list) {
                 if (!list.isEmpty()) {
+                    
                     Beacon beacon1 = list.get(0);
                     BConnect = true;
                     rss[0] = beacon1.getRssi();
@@ -197,6 +198,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
     }
+    //2번째 노이즈 
     public static String sencondnoise(String s, int numbofB) {
         String t = "";
         for (int i = 0; i < numbofB; i++) {
@@ -216,7 +218,7 @@ public class MainActivity extends AppCompatActivity {
         t = t.trim();
         return t;
     }
-
+    //1번째 노이즈 추가
     public static String noBid(int maxB, int numbofB) {
         String s = "", t = "";
         for (int i = 0; i < numbofB; i++) {
