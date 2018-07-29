@@ -1,2 +1,0 @@
-Naver 지도
-No Fragment, php 서버에서 가져온 좌표를 반영
